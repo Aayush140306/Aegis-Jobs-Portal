@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Jobs — Aegis Jobs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="jobs">
+
+  <div id="nav-root"></div>
+
+  <main class="page-main">
+
+    <!-- ===== SEARCH BAR ===== -->
+    <div class="search-bar-flat">
+      <div class="container">
+        <div class="search-row">
+          <div class="input-wrapper" style="flex:1;min-width:220px;">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input id="jobs-search" class="form-control" type="text" placeholder="Search by job title, company, or location…" autocomplete="off" />
+          </div>
+          <select id="jobs-location" class="form-control form-select" style="width:180px;">
+            <option value="all">All Locations</option>
+            <option value="Remote">Remote</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Gurugram">Gurugram</option>
+            <option value="Chennai">Chennai</option>
+          </select>
+          <select id="jobs-type" class="form-control form-select" style="width:160px;">
+            <option value="all">All Types</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Contract">Contract</option>
+            <option value="Internship">Internship</option>
+          </select>
+          <button id="clear-filters" class="btn btn-ghost">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <div class="container">
+      <div class="jobs-layout">
+
+        <!-- LEFT: Sidebar filters -->
+        <aside class="filters-panel">
+          <h3>Filters</h3>
+
+          <div class="filter-group">
+            <label>Location</label>
+            <div class="filter-options">
+              <label class="filter-option"><input type="radio" name="loc-panel" value="all" checked /> Any location</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Remote" /> Remote</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Bengaluru" /> Bengaluru</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Mumbai" /> Mumbai</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Hyderabad" /> Hyderabad</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Pune" /> Pune</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Gurugram" /> Gurugram</label>
+              <label class="filter-option"><input type="radio" name="loc-panel" value="Chennai" /> Chennai</label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Job Type</label>
+            <div class="filter-options">
+              <label class="filter-option"><input type="radio" name="type-panel" value="all" checked /> All types</label>
+              <label class="filter-option"><input type="radio" name="type-panel" value="Full-time" /> Full-time</label>
+              <label class="filter-option"><input type="radio" name="type-panel" value="Part-time" /> Part-time</label>
+              <label class="filter-option"><input type="radio" name="type-panel" value="Contract" /> Contract</label>
+              <label class="filter-option"><input type="radio" name="type-panel" value="Internship" /> Internship</label>
+            </div>
+          </div>
+
+          <button id="clear-filters-sidebar" class="btn btn-ghost w-full" style="margin-top:8px;">Clear All Filters</button>
+        </aside>
+
+        <!-- RIGHT: Results -->
+        <div>
+          <!-- Count + active filter chips -->
+          <div style="margin-bottom:16px;">
+            <p class="jobs-count" id="jobs-count"></p>
+            <div class="active-filters" id="active-filters"></div>
+          </div>
+
+          <!-- Jobs list (skeleton then real) -->
+          <div id="jobs-list" class="jobs-list"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script src="../js/script.js">
+  </script>
+  <script>
+    // Sidebar type-panel sync (supplement the main type select)
+    document.addEventListener('change', function(e) {
+      if (e.target.matches('[name="type-panel"]')) {
+        var sel = document.getElementById('jobs-type');
+        if (sel) { sel.value = e.target.value; sel.dispatchEvent(new Event('change')); }
+      }
+    });
+    // Sidebar clear button
+    document.addEventListener('click', function(e) {
+      if (e.target.id === 'clear-filters-sidebar') {
+        document.getElementById('clear-filters')?.click();
+        document.querySelectorAll('[name="loc-panel"]').forEach(function(r) { r.checked = r.value === 'all'; });
+        document.querySelectorAll('[name="type-panel"]').forEach(function(r) { r.checked = r.value === 'all'; });
+      }
+    });
+  </script>
+</body>
+</html>

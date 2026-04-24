@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis Jobs — Find Your Dream Job</title>
+  <meta name="description" content="Aegis Jobs Private Limited — connecting talented professionals with leading companies worldwide." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <div id="nav-root"></div>
+
+  <main class="page-main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text reveal">
+          <h1 class="display-font">Find Your <em>Dream Job</em><br>with Aegis</h1>
+          <p>Connecting talented professionals with leading companies worldwide.<br>Thousands of opportunities — one trusted platform.</p>
+        </div>
+
+        <!-- Search bar with live suggestions -->
+        <form class="search-bar reveal reveal-delay-1" id="hero-search-form" novalidate>
+          <div class="search-bar-inner">
+            <div class="input-wrapper" style="position:relative;flex:1;min-width:220px;">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </span>
+              <input id="hero-query" class="form-control" type="text" placeholder="Job title, keywords, or company" autocomplete="off" />
+              <div class="search-suggestions" id="hero-suggestions"></div>
+            </div>
+            <div class="input-wrapper" style="flex:1;min-width:180px;">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <input id="hero-location" class="form-control" type="text" placeholder="City or Remote" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Search Jobs
+            </button>
+          </div>
+        </form>
+
+        <!-- Stats ticker -->
+        <div class="hero-stats reveal reveal-delay-2">
+          <div class="hero-stat"><div class="hero-stat-num">10k+</div><div class="hero-stat-label">Active Jobs</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">2.4k+</div><div class="hero-stat-label">Companies</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">50k+</div><div class="hero-stat-label">Happy Hires</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Satisfaction</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BROWSE BY CATEGORY ===== -->
+    <section class="section-sm" style="background:#fff;">
+      <div class="container">
+        <div class="text-center mb-8 reveal">
+          <h2>Browse by Category</h2>
+          <p style="margin-top:8px;">Explore opportunities in your field</p>
+        </div>
+        <div class="categories-grid">
+          <a href="pages/jobs.html?q=engineer" class="category-pill reveal">
+            <div class="cat-icon" style="background:#eff6ff"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <span class="cat-label">Engineering</span><span class="cat-count">5 jobs</span>
+          </a>
+          <a href="pages/jobs.html?q=design" class="category-pill reveal reveal-delay-1">
+            <div class="cat-icon" style="background:#fdf4ff"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <span class="cat-label">Design</span><span class="cat-count">1 job</span>
+          </a>
+          <a href="pages/jobs.html?q=product" class="category-pill reveal reveal-delay-2">
+            <div class="cat-icon" style="background:#f0fdf4"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <span class="cat-label">Product</span><span class="cat-count">1 job</span>
+          </a>
+          <a href="pages/jobs.html?q=data" class="category-pill reveal reveal-delay-3">
+            <div class="cat-icon" style="background:#fef3c7"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <span class="cat-label">Data</span><span class="cat-count">1 job</span>
+          </a>
+          <a href="pages/jobs.html?q=marketing" class="category-pill reveal">
+            <div class="cat-icon" style="background:#fce7f3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="cat-label">Marketing</span><span class="cat-count">2 jobs</span>
+          </a>
+          <a href="pages/jobs.html?q=finance" class="category-pill reveal reveal-delay-1">
+            <div class="cat-icon" style="background:#ecfdf5"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <span class="cat-label">Finance</span><span class="cat-count">1 job</span>
+          </a>
+          <a href="pages/jobs.html?q=hr" class="category-pill reveal reveal-delay-2">
+            <div class="cat-icon" style="background:#f0f9ff"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <span class="cat-label">HR</span><span class="cat-count">1 job</span>
+          </a>
+          <a href="pages/jobs.html?q=intern" class="category-pill reveal reveal-delay-3">
+            <div class="cat-icon" style="background:#dcfce7"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <span class="cat-label">Internships</span><span class="cat-count">1 job</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLATFORM STATS ===== -->
+    <section class="section-sm" style="background:var(--bg-muted2);">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <h3>10,000+ Jobs</h3>
+            <p>Browse thousands of opportunities from top companies across every industry.</p>
+          </div>
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Trusted by 50k+</h3>
+            <p>Join thousands of professionals who found their dream jobs through Aegis.</p>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3>Career Growth</h3>
+            <p>Find opportunities that match your skills, passions, and career aspirations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" style="background:#fff;">
+      <div class="container">
+        <div class="text-center mb-8 reveal">
+          <h2>How It Works</h2>
+          <p style="margin-top:8px;">Three simple steps to your next great role</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-num">1</div>
+            <h3>Create Your Profile</h3>
+            <p>Sign up in seconds and tell us about your skills, experience, and what you're looking for in your next role.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-num">2</div>
+            <h3>Browse &amp; Apply</h3>
+            <p>Search thousands of listings, use smart filters to find the perfect match, and apply with one click.</p>
+          </div>
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-num">3</div>
+            <h3>Land the Job</h3>
+            <p>Track your applications in real time, hear back from employers, and celebrate your new career chapter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED JOBS ===== -->
+    <section class="section" style="background:var(--bg-muted);">
+      <div class="container">
+        <div class="flex justify-between items-center mb-8 reveal" style="flex-wrap:wrap;gap:16px;">
+          <div>
+            <h2>Featured Jobs</h2>
+            <p style="margin-top:8px;">Latest opportunities from top companies</p>
+          </div>
+          <a href="pages/jobs.html" class="btn btn-outline">View All 12 Jobs →</a>
+        </div>
+        <!-- Skeleton shown first, replaced by JS -->
+        <div id="featured-jobs" style="display:flex;flex-direction:column;gap:16px;"></div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section" style="background:#fff;">
+      <div class="container">
+        <div class="text-center mb-8 reveal">
+          <h2>What Our Users Say</h2>
+          <p style="margin-top:8px;">Real stories from people who found their dream jobs</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">"I found my dream UX role within two weeks of signing up. The search filters are excellent and the application process is seamless."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#7c3aed">PR</div>
+              <div><div class="author-name">Priya Rajan</div><div class="author-role">UX Designer at Creative Digital</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">"As a hiring manager, Aegis Jobs has been invaluable. We filled three senior engineering roles in under a month. Highly recommended."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#059669">JM</div>
+              <div><div class="author-name">James Mitchell</div><div class="author-role">VP Engineering at Tech Solutions</div></div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">"The bookmark feature saved me hours. I could shortlist jobs, compare them later, and apply when ready. Love this platform."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:#dc2626">AK</div>
+              <div><div class="author-name">Arjun Kumar</div><div class="author-role">Data Scientist at Analytics Pro</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Find Your Next Opportunity?</h2>
+        <p>Join thousands of professionals who trust Aegis Jobs for their career journey.</p>
+        <div class="cta-btns">
+          <a href="pages/jobs.html" class="btn btn-outline-white btn-lg">Browse All Jobs</a>
+          <a href="pages/post-job.html" class="btn btn-outline-white btn-lg">Post a Job</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

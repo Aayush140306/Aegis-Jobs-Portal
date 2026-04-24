@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Details — Aegis Jobs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="job-detail">
+
+  <div id="nav-root"></div>
+
+  <main class="page-main" style="background:var(--bg-muted);">
+    <div class="job-detail-wrap">
+
+      <!-- Back link -->
+      <a href="jobs.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Jobs
+      </a>
+
+      <div class="card">
+        <div class="card-body-lg">
+
+          <!-- Header: avatar + info + buttons -->
+          <div class="job-detail-header">
+            <div style="display:flex;gap:16px;align-items:flex-start;flex:1;">
+              <!-- Company avatar injected by JS -->
+              <div id="job-company-avatar" style="flex-shrink:0;"></div>
+              <div style="flex:1;">
+                <h1 class="job-detail-title" id="job-title">Loading…</h1>
+                <div class="job-detail-meta">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                    <span id="job-company"></span>
+                  </span>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span id="job-location"></span>
+                  </span>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <span id="job-salary"></span>
+                  </span>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span id="job-posted"></span>
+                  </span>
+                </div>
+                <span class="badge badge-primary" id="job-type"></span>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+              <button class="btn btn-primary btn-lg apply-btn">Apply Now</button>
+              <button class="bookmark-btn" id="detail-bookmark-btn" style="width:auto;padding:8px 14px;gap:6px;display:flex;align-items:center;">
+                <!-- Injected by JS -->
+              </button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Full description -->
+          <div class="job-detail-section">
+            <h2>Job Description</h2>
+            <p class="job-desc-text" id="job-full-desc"></p>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- Requirements -->
+          <div class="job-detail-section">
+            <h2>Requirements</h2>
+            <ul class="req-list" id="job-requirements"></ul>
+          </div>
+
+          <!-- Apply CTA box -->
+          <div class="apply-box">
+            <h3>Ready to Apply?</h3>
+            <p>Join <strong id="job-company-apply"></strong> and take the next step in your career journey.</p>
+            <button class="btn btn-primary btn-lg apply-btn">Apply for this Position</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== SIMILAR JOBS ===== -->
+      <div id="similar-section" style="margin-top:32px;">
+        <h3 style="margin-bottom:16px;">Similar Jobs</h3>
+        <div class="similar-jobs" id="similar-jobs">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>

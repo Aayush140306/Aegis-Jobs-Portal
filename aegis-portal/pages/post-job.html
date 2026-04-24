@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post a Job — Aegis Jobs</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="post-job">
+
+  <div id="nav-root"></div>
+
+  <main class="page-main" style="background: var(--bg-muted);">
+
+    <!-- Page header -->
+    <div class="page-banner">
+      <div class="container">
+        <div class="flex items-center gap-3 mb-2">
+          <div style="background: var(--primary-light); border-radius: var(--radius); padding: 10px; display:flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          <h1>Post a Job</h1>
+        </div>
+        <p>Fill in the details below to post a new job opening</p>
+      </div>
+    </div>
+
+    <div class="post-job-wrap">
+
+      <!-- Auth gate — shown if user is not logged in -->
+      <div id="post-job-auth-gate" style="display:none;">
+        <div class="card">
+          <div class="card-body" style="text-align:center;padding:60px 32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--slate-300)" stroke-width="1.5" style="margin:0 auto 20px;display:block;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 style="margin-bottom:8px;">Login Required</h3>
+            <p style="margin-bottom:24px;">You must be logged in to post a job listing.</p>
+            <a href="login.html" class="btn btn-primary btn-lg">Login / Register</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actual form — shown if logged in -->
+      <div id="post-job-form-section">
+        <div class="card post-job-card">
+          <div class="card-body">
+            <h3 style="margin-bottom:24px;">Job Details</h3>
+
+            <form id="post-job-form" novalidate style="display:flex;flex-direction:column;gap:20px;">
+
+              <!-- Job Title -->
+              <div class="form-group">
+                <label class="form-label" for="pj-title">Job Title <span class="required">*</span></label>
+                <input id="pj-title" class="form-control" type="text" placeholder="e.g. Senior Software Engineer" />
+                <span class="form-error" id="pj-title-error"></span>
+              </div>
+
+              <!-- Company -->
+              <div class="form-group">
+                <label class="form-label" for="pj-company">Company Name <span class="required">*</span></label>
+                <input id="pj-company" class="form-control" type="text" placeholder="e.g. Tech Solutions Inc." />
+                <span class="form-error" id="pj-company-error"></span>
+              </div>
+
+              <!-- Location + Salary -->
+              <div class="form-2col">
+                <div class="form-group">
+                  <label class="form-label" for="pj-location">Location <span class="required">*</span></label>
+                  <input id="pj-location" class="form-control" type="text" placeholder="e.g. San Francisco, CA or Remote" />
+                  <span class="form-error" id="pj-location-error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pj-salary">Salary Range <span class="text-muted text-sm">(optional)</span></label>
+                  <input id="pj-salary" class="form-control" type="text" placeholder="e.g. $100k – $150k" />
+                </div>
+              </div>
+
+              <!-- Job Type -->
+              <div class="form-group">
+                <label class="form-label" for="pj-type">Job Type <span class="required">*</span></label>
+                <select id="pj-type" class="form-control form-select">
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Internship">Internship</option>
+                </select>
+              </div>
+
+              <!-- Description -->
+              <div class="form-group">
+                <label class="form-label" for="pj-description">Job Description <span class="required">*</span></label>
+                <textarea id="pj-description" class="form-control" rows="10"
+                  placeholder="Provide a detailed description of the role, key responsibilities, required qualifications, and benefits…"></textarea>
+                <span class="form-hint">Include key responsibilities, qualifications, and company perks.</span>
+                <span class="form-error" id="pj-desc-error"></span>
+              </div>
+
+              <!-- Actions -->
+              <div class="post-job-actions">
+                <button type="submit" class="btn btn-primary btn-lg">Publish Job</button>
+                <a href="jobs.html" class="btn btn-ghost btn-lg">Cancel</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script src="../js/script.js"></script>
+</body>
+</html>
